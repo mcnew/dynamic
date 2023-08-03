@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>dynamic</display-name>
+
+	<servlet>
+		<description></description>
+		<display-name>DynamicServlet</display-name>
+		<servlet-name>DynamicServlet</servlet-name>
+		<servlet-class>dynamic.DynamicServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DynamicServlet</servlet-name>
+		<url-pattern>/template/*</url-pattern>
+	</servlet-mapping>
+
+</web-app>
