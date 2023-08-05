@@ -32,6 +32,9 @@ public class ClassicServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		response.addHeader("Access-Control-Allow-Methods", "OPTIONS,POST");
+		response.addHeader("Access-Control-Allow-Headers", "Content-Type");
 		String contentType = request.getContentType();
 		if (contentType.equals("application/json")) {
 			Map<String, Object> data;
@@ -51,4 +54,11 @@ public class ClassicServlet extends HttpServlet {
 		}
 	}
 
+	@Override
+	protected void doOptions(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		response.addHeader("Access-Control-Allow-Methods", "OPTIONS,POST");
+		response.addHeader("Access-Control-Allow-Headers", "Content-Type");
+	}
 }
